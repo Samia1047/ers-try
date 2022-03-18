@@ -1,5 +1,5 @@
 create database ers;
-
+    
 \c ers;
 
 create table employee(employee_id INT GENERATED ALWAYS AS IDENTITY,
