@@ -1,5 +1,7 @@
 create database ers;
 
+\c ers;
+
 create table employee(employee_id INT GENERATED ALWAYS AS IDENTITY,
 employee_password varchar(50),employee_first_name varchar(50),
 employee_last_name varchar(50),employee_contact varchar(50),
