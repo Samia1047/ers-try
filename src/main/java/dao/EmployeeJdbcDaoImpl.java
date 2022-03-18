@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import exception.SystemException;
 import pojo.EmployeePojo;
 import pojo.MergedReimbursmentPojo;
@@ -14,11 +12,11 @@ import pojo.MergedReimbursmentPojo;
 
 public class EmployeeJdbcDaoImpl implements EmployeeDao{
 
-	public static final Logger LOG = LogManager.getLogger(EmployeeJdbcDaoImpl.class);
+	//public static final Logger LOG = LogManager.getLogger(EmployeeJdbcDaoImpl.class);
 	
 	@Override
 	public EmployeePojo employeeInfo(int employeeId) throws SystemException {
-		LOG.info("Entered employeeInfo() in DAO");
+	//	LOG.info("Entered employeeInfo() in DAO");
 		EmployeePojo employeePojo = null;
 		Connection conn = DBUtil.obtainConnection();
 		
@@ -34,14 +32,14 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 
 			throw new SystemException();
 		}
-		LOG.info("Exited employeeInfo() in DAO");
+		//LOG.info("Exited employeeInfo() in DAO");
 		return employeePojo;
 		
 	}
 	
 	@Override
 	public EmployeePojo employeeViewDetails(String employeeContact) throws SystemException {
-		LOG.info("Entered employeeViewDetails() in DAO");
+		//LOG.info("Entered employeeViewDetails() in DAO");
 		EmployeePojo employeePojo = null;
 		Connection conn = DBUtil.obtainConnection();
 		
@@ -57,7 +55,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 
 			throw new SystemException();
 		}
-		LOG.info("Exited employeeViewDetails() in DAO");
+		//LOG.info("Exited employeeViewDetails() in DAO");
 		return employeePojo;
 		
 	}
@@ -66,7 +64,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 	public EmployeePojo login(String employeeContact, String employeePassword) throws SystemException {
 		// TODO Auto-generated method stub
 		
-		LOG.info("Entered login() in DAO");
+		//LOG.info("Entered login() in DAO");
 		EmployeePojo employeePojo = null;
 
 		Connection conn = DBUtil.obtainConnection();
@@ -84,7 +82,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 			throw new SystemException();
 		
 		}
-		LOG.info("Exited login() in DAO");
+		//LOG.info("Exited login() in DAO");
 		return employeePojo;
 		
 	}
@@ -93,7 +91,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 	@Override
 	public MergedReimbursmentPojo submitReimbursementReq(MergedReimbursmentPojo pendingReimbursementPojo)throws SystemException {
 		
-		LOG.info("Entered submitReimbursementReq() in Emplyee DAO");
+		//LOG.info("Entered submitReimbursementReq() in Emplyee DAO");
 		Connection conn = DBUtil.obtainConnection();
 		try {
 		Statement stmt = conn.createStatement();
@@ -103,14 +101,14 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 		}catch(SQLException e){
 			throw new SystemException();
 		}
-		LOG.info("Exited submitReimbursementReq() in Employee DAO");
+		//LOG.info("Exited submitReimbursementReq() in Employee DAO");
 		return pendingReimbursementPojo;
 		
 	}
 	
 	@Override
 	public MergedReimbursmentPojo viewReimbursementPendingReq(int reimbursementId) throws SystemException {
-		LOG.info("Entered viewReimbursementPendingReq() in Emplyee DAO");
+		//LOG.info("Entered viewReimbursementPendingReq() in Emplyee DAO");
 		
 		MergedReimbursmentPojo pendingReimbursmentPojo = null;
 		Connection conn = DBUtil.obtainConnection();
@@ -124,14 +122,14 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 		}catch(SQLException e) {
 			throw new SystemException();
 		}
-		LOG.info("Exited viewReimbursementPendingReq() in Employee DAO");
+		//LOG.info("Exited viewReimbursementPendingReq() in Employee DAO");
 		return pendingReimbursmentPojo;
 		
 	}
 
 	@Override
 	public MergedReimbursmentPojo viewReimbursementResolveReq(int reimbursementId) throws SystemException {
-		LOG.info("Entered viewReimbursementResolveReq() in Emplyee DAO");
+		//LOG.info("Entered viewReimbursementResolveReq() in Emplyee DAO");
 		MergedReimbursmentPojo resolvedReimbursementPojo = null;
 		Connection conn = DBUtil.obtainConnection();
 		try {
@@ -145,7 +143,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 		}catch(SQLException e) {
 			throw new SystemException();
 		}
-		LOG.info("Exited viewReimbursementResolveReq() in Employee DAO");
+		//LOG.info("Exited viewReimbursementResolveReq() in Employee DAO");
 		return resolvedReimbursementPojo;
 	}
 
@@ -153,7 +151,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 
 	@Override
 	public EmployeePojo updateEmployeeInfo(EmployeePojo employeePojo) throws SystemException {
-		LOG.info("Entered updateEmployeeInfo() in Emplyee DAO");
+		//LOG.info("Entered updateEmployeeInfo() in Emplyee DAO");
 		Connection conn = DBUtil.obtainConnection();
 		try{
 			Statement stmt = conn.createStatement();
@@ -164,7 +162,7 @@ public class EmployeeJdbcDaoImpl implements EmployeeDao{
 		}catch(SQLException e) {
 			throw new SystemException();
 		}
-		LOG.info("Exited updateEmployeeInfo() in Employee DAO");
+		//LOG.info("Exited updateEmployeeInfo() in Employee DAO");
 		return employeePojo;
 	}
 	
