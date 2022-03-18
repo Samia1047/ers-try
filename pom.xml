@@ -50,12 +50,7 @@
 					<target>11</target>
 				</configuration>
 			</plugin>
-			<!-- below plugin helps to Build SUCCESS with version 3.0.0-M1. -->	
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M1</version>
-			</plugin>
+			
 			
 
 			<plugin>
