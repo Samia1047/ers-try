@@ -33,8 +33,8 @@ static Connection conn;
 //	String userName = "postgres";
 //	String password = "Samia@123";
 //	
-	String connectionUrl = "jdbc:postgresql://ip-172.31.18.200.us-east-2.compute.internal:8888/ers";
-
+	String connectionUrl = "jdbc:postgresql://ip-172.31.18.200.internal:8888/ers";
+	 
 		String userName = "postgres";
 		String password = "mysecretpassword";
 	if(conn == null) {
